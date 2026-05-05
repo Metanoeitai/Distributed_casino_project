@@ -36,22 +36,23 @@ public class ServerConnection{
 
                     List<GameResult> results = new ArrayList<>();
                     while(true){
-                        String firstField = in.readLine();
-                        if(firstField == null || firstField.equals("END")){
+                        String line = in.readLine();
+                        if(line == null || line.equals("END")){
                             break;
                         }
 
+                        String[] parts = line.split(",");
                         GameResult game = new GameResult();
-                        game.gameName = firstField;
-                        game.providerName = in.readLine();
-                        game.gameLogo = in.readLine();
-                        game.stars = in.readLine();
-                        game.noOfVotes = in.readLine();
-                        game.minBet = in.readLine();
-                        game.maxBet = in.readLine();
-                        game.riskLevel = in.readLine();
-                        game.betCategory = in.readLine();
-                        game.jackpot = in.readLine();
+                        game.gameName = parts[0];
+                        game.providerName = parts[1];
+                        game.gameLogo = parts[2];
+                        game.stars = parts[3];
+                        game.noOfVotes = parts[4];
+                        game.minBet = parts[5];
+                        game.maxBet = parts[6];
+                        game.riskLevel = parts[7];
+                        game.betCategory = parts[8];
+                        game.jackpot = parts[9];
                         results.add(game);
 
                     }
