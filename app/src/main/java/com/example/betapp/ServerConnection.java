@@ -17,7 +17,7 @@ public class ServerConnection{
         this.port = port;
     }
 
-    public interface Callback<T>{
+    public static interface Callback<T>{ //to static villy's
         void onSuccess(T result);
         void onError(String error);
     }
