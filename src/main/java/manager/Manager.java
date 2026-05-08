@@ -7,8 +7,8 @@ import com.google.gson.Gson;
 import java.nio.file.*;
 import common.Game;
 public class Manager {
-    private static final String Master_Ip = "localhost"; //ip masterserver
-    private static final int Master_port = 1000;        //port masterserver
+    private static final String Master_Ip = "172.20.10.9"; //ip masterserver
+    private static final int Master_port = 8080;        //port masterserver
     public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
         System.out.println("KSEKINAEI O MANAGER");
