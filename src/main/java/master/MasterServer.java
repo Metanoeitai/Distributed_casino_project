@@ -4,7 +4,7 @@ package master;
     import java.util.*;
     import common.Message;
     public class MasterServer {
-        private static int clientport = 1000;
+        private static int clientport = 8080;
         private static List<String> workerHosts = new ArrayList<>();
         private static List<Integer> workerPorts = new ArrayList<>();
        
