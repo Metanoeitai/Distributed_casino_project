@@ -15,7 +15,7 @@ import java.util.List;
 public class GameListFragmentActivity extends Fragment {
 
     private String playerId;
-    private ServerConnection serverConnection = new ServerConnection("172.20.10.6", 8080);
+    private ServerConnection serverConnection = new ServerConnection("172.20.10.3", 8080);
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
