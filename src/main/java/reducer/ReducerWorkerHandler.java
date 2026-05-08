@@ -39,13 +39,13 @@ public class ReducerWorkerHandler implements Runnable {//
                     String gameName = (String) obj;
                     String providerName = (String) in.readObject();
                     String gameLogo = (String) in.readObject();
-                    double stars = (double) in.readObject();
-                    int noOfVotes = (int) in.readObject();
-                    double minBet = (double) in.readObject();
-                    double maxBet = (double) in.readObject();
+                    String stars =  String.valueOf( in.readObject());
+                    String noOfVotes =  String.valueOf( in.readObject());
+                    String minBet =  String.valueOf( in.readObject());
+                    String maxBet =  String.valueOf( in.readObject());
                     String riskLevel = (String) in.readObject();
                     String betCategory = (String) in.readObject();
-                    double jackpot = (double) in.readObject();
+                    String jackpot = String.valueOf( in.readObject());
 
                     String[] gameData = {gameName, providerName, gameLogo,
                         String.valueOf(stars), String.valueOf(noOfVotes),
