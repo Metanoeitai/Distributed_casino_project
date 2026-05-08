@@ -27,6 +27,7 @@ public class AddBalanceFragmentActivity extends Fragment {
         EditText etAmount = view.findViewById(R.id.etAmount);
         Button btnAddBalance = view.findViewById(R.id.btnAddBalance);
         TextView tvResult = view.findViewById(R.id.tvResult);
+        TextView tvCurrentBalance = view.findViewById(R.id.tvCurrentBalance);
 
         final String finalPlayerId = playerId;
 
@@ -47,8 +48,13 @@ public class AddBalanceFragmentActivity extends Fragment {
             serverConnection.addBalance(finalPlayerId, amountStr, new ServerConnection.Callback<String>() {
                 @Override
                 public void onSuccess(String result) {
-                    requireActivity().runOnUiThread(() ->
-                            tvResult.setText("✅ Balance added successfully!"));
+                    requireActivity().runOnUiThread(() -> {
+                        String[] parts = result.split(",");
+                        if (parts.length > 1) {
+                            tvCurrentBalance.setText("Current Balance: " + parts[1] + " FUN");
+                        }
+                        tvResult.setText("✅ Balance of " + amountStr + " FUN added successfully!");
+                    });
                 }
                 @Override
                 public void onError(String error) {
