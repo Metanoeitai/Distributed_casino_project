@@ -183,7 +183,12 @@ public class WorkerHandler implements Runnable{
         String GameName = (String) in.readObject(); 
         String betAmountStr = (String) in.readObject(); 
         double betAmount = Double.parseDouble(betAmountStr);
-
+        if (player.getBalance() < betAmount) {   
+            out.writeObject("ERROR");
+            out.writeObject("Insufficient balance. Please add balance first.");
+            out.flush();
+            return;
+        }
         Game game = storage.getGame(GameName);
         if(game == null || !game.isActive()){ 
             out.writeObject(Message.ERROR + ": GAME NOT FOUND");
