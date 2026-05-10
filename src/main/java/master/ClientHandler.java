@@ -42,8 +42,8 @@ public class ClientHandler extends Thread {
                 String riskLevel = in.readLine();
                 String HashKey = in.readLine();
                 //upologizoume se poio worker paei mesw hash
-                char protogramma = GameName.charAt(0);
-                int workerthesi = protogramma % workerHosts.size();
+                int hashCode = Math.abs(GameName.hashCode());
+                int workerthesi = hashCode % workerHosts.size();
                 System.out.println("To game " + GameName + "paei ston worker " + workerthesi);
                 // new Socket gia worker 
                 Socket workerSocket = new Socket(workerHosts.get(workerthesi),workerPorts.get(workerthesi));
@@ -70,8 +70,8 @@ public class ClientHandler extends Thread {
                 System.out.println("H entoli pou elaba einai REMOVE_GAME");
                 String GameName = in.readLine();
                 //upologizoume se poio worker paei mesw hash 
-                char protogramma = GameName.charAt(0);
-                int workerthesi = protogramma % workerHosts.size();
+                int hashCode = Math.abs(GameName.hashCode());
+                int workerthesi = hashCode % workerHosts.size();
                 System.out.println("To game " + GameName + "paei ston worker " + workerthesi);
                   // new Socket gia worker 
                 Socket workerSocket = new Socket(workerHosts.get(workerthesi),workerPorts.get(workerthesi));
@@ -183,8 +183,8 @@ public class ClientHandler extends Thread {
                 String Stars = in.readLine();
                 System.out.println("H entoli pou elava einai Rate");
                 //upologizoume se poio worker paei mesw hash
-                char protogramma = GameName.charAt(0);
-                int workerthesi = protogramma % workerHosts.size();
+                int hashCode = Math.abs(GameName.hashCode());
+                int workerthesi = hashCode % workerHosts.size();
                 System.out.println("To game " + GameName + "paei ston worker " + workerthesi);
                 //new socket gia worker
                 Socket workerSocket = new Socket(workerHosts.get(workerthesi),workerPorts.get(workerthesi));
@@ -226,8 +226,8 @@ public class ClientHandler extends Thread {
                 String riskLevel = in.readLine();
                 System.out.println("H entoli pou elava einai Rate");
                 //upologizoume se poio worker paei mesw hash
-                char protogramma = GameName.charAt(0);
-                int workerthesi = protogramma % workerHosts.size();
+                int hashCode = Math.abs(GameName.hashCode());
+                int workerthesi = hashCode % workerHosts.size();
                 System.out.println("To game " + GameName + "paei ston worker " + workerthesi);
                 Socket workerSocket = new Socket(workerHosts.get(workerthesi),workerPorts.get(workerthesi));
                 ObjectOutputStream workerOut = new ObjectOutputStream(workerSocket.getOutputStream());
@@ -249,8 +249,8 @@ public class ClientHandler extends Thread {
                 String betAmount = in.readLine();
                 System.out.println("H entoli pou elava einai Rate");
                 //upologizoume se poio worker paei mesw hash
-                char protogramma = GameName.charAt(0);
-                int workerthesi = protogramma % workerHosts.size();
+                int hashCode = Math.abs(GameName.hashCode());
+                int workerthesi = hashCode % workerHosts.size();
                 System.out.println("To game " + GameName + "paei ston worker " + workerthesi);
                  Socket workerSocket = new Socket(workerHosts.get(workerthesi),workerPorts.get(workerthesi));
                 ObjectOutputStream workerOut = new ObjectOutputStream(workerSocket.getOutputStream());
