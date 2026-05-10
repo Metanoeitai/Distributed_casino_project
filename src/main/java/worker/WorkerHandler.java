@@ -299,7 +299,8 @@ public class WorkerHandler implements Runnable{
         double amount = Double.parseDouble(amountStr);
 
         storage.addBalance(playerId, amount); 
-        out.writeObject(Message.OK); 
+        double newBalance = storage.getBalance(playerId);
+        out.writeObject(Message.OK + "," + newBalance);
         out.flush();
     }
 
