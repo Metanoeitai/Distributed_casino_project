@@ -82,19 +82,21 @@ public class GameDetailFragmentActivity extends Fragment {
             tvResult.setText("Sending bet to server...");
             serverConnection.play(finalGameName, finalPlayerId, String.valueOf(betAmount), new ServerConnection.Callback<String>() {
                 @Override
-                public void onSuccess(String result) {
-                    requireActivity().runOnUiThread(() -> {
-                        String[] parts = result.split("\\|");
-                        String status = parts[0];
-                        String winLoss = parts[1];
-                        String type = parts[2];
-                        if (type.equals("WIN")) {
-                            tvResult.setText("🏆 You won: " + winLoss + " FUN!");
-                        } else {
-                            tvResult.setText("😞 You lost: " + winLoss + " FUN");
-                        }
-                    });
-                }
+              public void onSuccess(String result) {
+    requireActivity().runOnUiThread(() -> {
+        // ΠΡΟΣΘΕΣΕ ΑΥΤΟ ΠΡΩΤΑ:
+        if (result.startsWith("ERROR")) {
+            String errorMsg = result.substring(6);
+            tvResult.setText("❌ " + errorMsg);
+            Toast.makeText(getContext(), errorMsg, Toast.LENGTH_LONG).show();
+            return;
+        }
+        
+        // Το υπόλοιπο κώδικα μένει ίδιος...
+        String[] parts = result.split("\\|");
+        // ...
+    });
+}
                 @Override
                 public void onError(String error) {
                     requireActivity().runOnUiThread(() ->
