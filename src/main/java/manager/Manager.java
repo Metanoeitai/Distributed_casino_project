@@ -7,7 +7,7 @@ import com.google.gson.Gson;
 import java.nio.file.*;
 import common.Game;
 public class Manager {
-    private static final String Master_Ip = "127.0.0.1"; //ip masterserver allagh
+    private static final String Master_Ip = "172.20.10.7"; //ip masterserver allagh
     private static final int Master_port = 8080;        //port masterserver
     public static void main(String[] args) {
         Scanner scanner  = new Scanner(System.in);
