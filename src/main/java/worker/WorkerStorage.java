@@ -83,4 +83,10 @@ public class WorkerStorage{
         }
         player.addBalance(amount);
     }
+
+    public synchronized double getBalance(String playerId){
+        Player player = players.get(playerId);
+        if(player == null) return 0.0;
+        return player.getBalance();
+    }
 }
