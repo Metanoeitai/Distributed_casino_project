@@ -206,6 +206,7 @@ public class ClientHandler extends Thread {
                 System.out.println("H entoli pou elava einai ADD_BALANCE");
                 String PlayerId = in.readLine();
                 String amount = in.readLine();
+                String lastResponse = Message.OK;
                 for(int i=0; i<workerHosts.size(); i++){
                      Socket workerSocket = new Socket(workerHosts.get(i), workerPorts.get(i));
                     ObjectOutputStream workerOut = new ObjectOutputStream(workerSocket.getOutputStream());
@@ -214,10 +215,10 @@ public class ClientHandler extends Thread {
                     workerOut.writeObject(amount);
                     workerOut.flush();
                     ObjectInputStream workerIn = new ObjectInputStream(workerSocket.getInputStream());
-                    String apantisi = (String) workerIn.readObject();
+                    lastResponse = (String) workerIn.readObject();
                     workerSocket.close();
                 } PrintWriter clientout = new PrintWriter(sock2.getOutputStream(), true);
-                clientout.println(Message.OK);
+                clientout.println(lastResponse);
                 
 
             } else if (entoli.equals(Message.UPDATE_RISK)) {
