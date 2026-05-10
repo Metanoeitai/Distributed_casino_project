@@ -1,10 +1,8 @@
-master\SearchState.class
 srg\RandomNumberBuffer.class
 master\ClientHandler.class
 master\MasterServer.class
 srg\SRGWorkerHandler.class
 common\Game.class
-master\SearchWorkerThread.class
 common\Bet.class
 common\RiskTables.class
 player\Test$GameSearchResult.class

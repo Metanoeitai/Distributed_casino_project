@@ -95,7 +95,7 @@ public class ClientHandler extends Thread {
                 String minStars = in.readLine();
 
                 //syndeomai me reducer opws MAP 
-                Socket reducerSocket = new Socket("172.20.10.7",4000);
+                Socket reducerSocket = new Socket("127.0.0.1",4000);
                 ObjectOutputStream reducerOut = new ObjectOutputStream(reducerSocket.getOutputStream());
                 reducerOut.writeObject(workerHosts.size());
                 reducerOut.writeObject("SEARCH"); 
@@ -146,7 +146,7 @@ public class ClientHandler extends Thread {
                 System.out.println("H entoli pou elava einai MAP");
                 String typosMap = in.readLine();
                 //sunedomai me reducer 
-                Socket reducerSocket = new Socket("172.20.10.7",4000);
+                Socket reducerSocket = new Socket("127.0.0.1",4000);
                 ObjectOutputStream reducerout = new ObjectOutputStream(reducerSocket.getOutputStream());
                 reducerout.writeObject(workerHosts.size());
                 reducerout.writeObject(Message.MAP);

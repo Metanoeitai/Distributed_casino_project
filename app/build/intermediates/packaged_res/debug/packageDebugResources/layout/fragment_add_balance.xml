@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="#1a1a2e">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="💰 Add Balance"
+        android:textSize="28sp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginBottom="48dp"/>
+
+    <TextView
+        android:id="@+id/tvCurrentBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Balance: -- "
+        android:textSize="18sp"
+        android:textColor="#4ecca3"
+        android:layout_marginBottom="32dp"/>
+
+    <EditText
+        android:id="@+id/etAmount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        android:hint="Enter amount to add"
+        android:textColor="#ffffff"
+        android:textColorHint="#aaaaaa"
+        android:backgroundTint="#ffffff"
+        android:inputType="numberDecimal"
+        android:layout_marginBottom="24dp"/>
+
+    <Button
+        android:id="@+id/btnAddBalance"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ADD BALANCE"
+        android:backgroundTint="#e94560"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/tvResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#4ecca3"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:gravity="center"/>
+
+</LinearLayout>
