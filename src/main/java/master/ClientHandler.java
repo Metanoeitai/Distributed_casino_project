@@ -269,6 +269,7 @@ public class ClientHandler extends Thread {
                 clientout.println(String.valueOf(apantisi2));
                 clientout.println(apantisi3);
                 workerSocket.close();
+                sock2.close();
             }
 
         } catch (Exception e) {
